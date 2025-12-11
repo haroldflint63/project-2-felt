@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the cosmos with our responsive flexbox layout showcasing space exploration, planets, galaxies, and celestial wonders. A comprehensive web development project demonstrating advanced CSS techniques.">
+    
+    <!-- Open Graph tags for social media -->
+    <meta property="og:title" content="Space Exploration - Responsive Flexbox Layout">
+    <meta property="og:description" content="Journey through the cosmos with an interactive, responsive web layout featuring planets, galaxies, and space phenomena.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://haroldflint63.github.io/project-2-felt/og-image.png">
+    
+    <title>Space Exploration - Responsive Flexbox Layout</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Emoji Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', 'Arial', sans-serif;
+            background-color: #0a0e27;
+            color: #ffffff;
+            padding-top: 80px; /* Space for fixed header */
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #64b5f6;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: #64b5f6;
+            background: rgba(100, 181, 246, 0.1);
+        }
+
+        nav a:focus {
+            outline: 2px solid #64b5f6;
+            outline-offset: 2px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #64b5f6;
+            font-size: 2.5rem;
+            font-weight: 600;
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Section Labels */
+        .section-label {
+            background: rgba(100, 181, 246, 0.15);
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #64b5f6;
+            font-weight: 600;
+            color: #64b5f6;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Container for each row */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        /* Base item styling */
+        .item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeIn 0.6s ease-in backwards;
+        }
+
+        /* Staggered animation for items */
+        .item:nth-child(1) { animation-delay: 0.1s; }
+        .item:nth-child(2) { animation-delay: 0.2s; }
+        .item:nth-child(3) { animation-delay: 0.3s; }
+        .item:nth-child(4) { animation-delay: 0.4s; }
+        .item:nth-child(5) { animation-delay: 0.5s; }
+
+        .item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .item:focus-within {
+            outline: 3px solid #64b5f6;
+            outline-offset: 3px;
+        }
+
+        .item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            filter: brightness(0) invert(1);
+        }
+
+        .item h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .item p {
+            font-size: 0.95em;
+            opacity: 0.9;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Row 1: 4 equal columns (25% each) */
+        .row-1 .item {
+            flex: 1 1 calc(25% - 20px);
+            min-width: 200px;
+        }
+
+        /* Row 2: 2 equal columns (50% each) */
+        .row-2 .item {
+            flex: 1 1 calc(50% - 20px);
+            min-width: 250px;
+        }
+
+        /* Row 3: 1 narrow column (25%) + 1 wide column (75%) */
+        .row-3 .item-1 {
+            flex: 1 1 calc(25% - 20px);
+            min-width: 200px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .row-3 .item-2 {
+            flex: 3 1 calc(75% - 20px);
+            min-width: 300px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        /* Row 4: Single full-width item (100%) */
+        .row-4 .item {
+            flex: 1 1 100%;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        /* Row 5: 1-2-1 layout (25% + 50% + 25%) with ORDER property */
+        .row-5 .item-1 {
+            flex: 1 1 calc(25% - 20px);
+            min-width: 200px;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            order: 1;
+        }
+
+        .row-5 .item-2 {
+            flex: 2 1 calc(50% - 20px);
+            min-width: 250px;
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            order: 2;
+        }
+
+        .row-5 .item-3 {
+            flex: 1 1 calc(25% - 20px);
+            min-width: 200px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            order: 3;
+        }
+
+        /* Row 6: Creative layout - 5 items with varying widths */
+        .row-6 .item {
+            flex: 1 1 calc(20% - 20px);
+            min-width: 150px;
+        }
+
+        .row-6 .item-1 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        .row-6 .item-2 {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            flex: 2 1 calc(40% - 20px);
+        }
+
+        .row-6 .item-3 {
+            background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%);
+        }
+
+        .row-6 .item-4 {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+        }
+
+        .row-6 .item-5 {
+            background: linear-gradient(135deg, #f77062 0%, #fe5196 100%);
+        }
+
+        /* Info Box */
+        .info-box {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        .info-box h3 {
+            margin-bottom: 15px;
+            color: #64b5f6;
+        }
+
+        .info-box p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .info-box code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: rgba(10, 14, 39, 0.95);
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 60px;
+            border-top: 1px solid rgba(100, 181, 246, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h4 {
+            color: #64b5f6;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .footer-section a:hover {
+            color: #64b5f6;
+            padding-left: 5px;
+        }
+
+        .footer-section a:focus {
+            outline: 2px solid #64b5f6;
+            outline-offset: 2px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Tablet styles (768px and below) */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            /* Row 1: 2 columns */
+            .row-1 .item {
+                flex: 1 1 calc(50% - 20px);
+            }
+
+            /* Row 2: Stack vertically */
+            .row-2 .item {
+                flex: 1 1 100%;
+            }
+
+            /* Row 3: Stack vertically */
+            .row-3 .item-1,
+            .row-3 .item-2 {
+                flex: 1 1 100%;
+            }
+
+            /* Row 4: Remains full width */
+            
+            /* Row 5: Change order - middle item first, then side items */
+            .row-5 .item-1 {
+                order: 2;
+                flex: 1 1 100%;
+            }
+
+            .row-5 .item-2 {
+                order: 1;
+                flex: 1 1 100%;
+            }
+
+            .row-5 .item-3 {
+                order: 3;
+                flex: 1 1 100%;
+            }
+
+            /* Row 6: 2 columns */
+            .row-6 .item {
+                flex: 1 1 calc(50% - 20px);
+            }
+
+            .row-6 .item-2 {
+                flex: 1 1 calc(50% - 20px);
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+        /* Mobile styles (480px and below) */
+        @media (max-width: 480px) {
+            body {
+                padding-top: 70px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.75rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem;
+            }
+
+            /* All rows stack vertically */
+            .row-1 .item,
+            .row-3 .item-1,
+            .row-3 .item-2,
+            .row-6 .item,
+            .row-6 .item-2 {
+                flex: 1 1 100%;
+            }
+
+            .item {
+                min-height: 150px;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .item h3 {
+                font-size: 1.2em;
+            }
+
+            footer {
+                padding: 2rem 1rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header role="banner">
+        <a href="#" class="logo" aria-label="Space Exploration Home">
+            <span>🚀</span>
+            <span>Space Explorer</span>
+        </a>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="#planets">Planets</a></li>
+                <li><a href="#exploration">Exploration</a></li>
+                <li><a href="#galaxy">Galaxy</a></li>
+                <li><a href="#phenomena">Phenomena</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <h1>🌌 Responsive Flexbox Layout - Space Exploration Theme 🚀</h1>
+
+        <!-- Row 1: 4 equal columns (25% each) -->
+        <section id="planets" aria-labelledby="row1-label">
+            <div class="section-label" id="row1-label">Row 1: Four Equal Columns (25% each)</div>
+            <div class="row row-1">
+                <div class="item" role="article" aria-label="Earth information">
+                    <h3>🌍</h3>
+                    <h3>Earth</h3>
+                    <p>Our home planet, the only known world with life in the universe.</p>
+                </div>
+                <div class="item" role="article" aria-label="Mars information">
+                    <h3>🔴</h3>
+                    <h3>Mars</h3>
+                    <p>The Red Planet, future destination for human exploration.</p>
+                </div>
+                <div class="item" role="article" aria-label="Saturn information">
+                    <h3>🪐</h3>
+                    <h3>Saturn</h3>
+                    <p>The ringed giant with 83 known moons orbiting around it.</p>
+                </div>
+                <div class="item" role="article" aria-label="Moon information">
+                    <h3>🌙</h3>
+                    <h3>Moon</h3>
+                    <p>Earth's natural satellite and humanity's first step beyond home.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Row 2: 2 equal columns (50% each) -->
+        <section id="exploration" aria-labelledby="row2-label">
+            <div class="section-label" id="row2-label">Row 2: Two Equal Columns (50% each)</div>
+            <div class="row row-2">
+                <div class="item" role="article" aria-label="Space Exploration information">
+                    <h3>🛸</h3>
+                    <h3>Space Exploration</h3>
+                    <p>Humanity's journey to explore the cosmos, from satellites to interstellar missions. We continue to push the boundaries of what's possible.</p>
+                </div>
+                <div class="item" role="article" aria-label="Astronomy information">
+                    <h3>🔭</h3>
+                    <h3>Astronomy</h3>
+                    <p>The scientific study of celestial objects, space, and the universe. Unlocking the mysteries of galaxies, stars, and planets.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Row 3: 1 narrow column (25%) + 1 wide column (75%) -->
+        <section id="galaxy" aria-labelledby="row3-label">
+            <div class="section-label" id="row3-label">Row 3: Asymmetric Layout (25% + 75%)</div>
+            <div class="row row-3">
+                <div class="item item-1" role="article" aria-label="Sun information">
+                    <h3>☀️</h3>
+                    <h3>The Sun</h3>
+                    <p>Our star, the center of our solar system.</p>
+                </div>
+                <div class="item item-2" role="article" aria-label="Milky Way Galaxy information">
+                    <h3>🌌</h3>
+                    <h3>Milky Way Galaxy</h3>
+                    <p>Our home galaxy contains over 200 billion stars and spans 100,000 light-years across. It's a barred spiral galaxy with our solar system located in one of its outer arms, about 26,000 light-years from the galactic center.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Row 4: Single full-width item (100%) -->
+        <section aria-labelledby="row4-label">
+            <div class="section-label" id="row4-label">Row 4: Full-Width Single Item (100%)</div>
+            <div class="row row-4">
+                <div class="item" role="article" aria-label="International Space Station information">
+                    <h3>🚀 International Space Station 🛰️</h3>
+                    <p>A marvel of human engineering, the ISS orbits Earth at 17,500 mph, serving as a laboratory for scientific research and international cooperation. It has been continuously inhabited since November 2000, representing one of humanity's greatest achievements in space exploration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Row 5: 1-2-1 layout (25% + 50% + 25%) with ORDER property that changes on tablet/mobile -->
+        <section id="phenomena" aria-labelledby="row5-label">
+            <div class="section-label" id="row5-label">Row 5: Three-Column Layout (25% + 50% + 25%) - Uses ORDER Property</div>
+            <div class="row row-5">
+                <div class="item item-1" role="article" aria-label="Nebulae information">
+                    <h3>🌠</h3>
+                    <h3>Nebulae</h3>
+                    <p>Stellar nurseries where new stars are born from cosmic dust and gas.</p>
+                </div>
+                <div class="item item-2" role="article" aria-label="Star Formation information">
+                    <h3>🌟</h3>
+                    <h3>Star Formation</h3>
+                    <p>Stars form from clouds of gas and dust that collapse under gravity. This process takes millions of years and creates the light sources that illuminate our universe.</p>
+                </div>
+                <div class="item item-3" role="article" aria-label="Black Holes information">
+                    <h3>🕳️</h3>
+                    <h3>Black Holes</h3>
+                    <p>Mysterious objects with gravity so strong that nothing can escape them.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Row 6: Creative layout - 5 items with varying widths -->
+        <section aria-labelledby="row6-label">
+            <div class="section-label" id="row6-label">Row 6: Creative Five-Item Layout (Varying Widths)</div>
+            <div class="row row-6">
+                <div class="item item-1" role="article" aria-label="Comets information">
+                    <h3>☄️</h3>
+                    <h3>Comets</h3>
+                    <p>Icy wanderers from the outer solar system.</p>
+                </div>
+                <div class="item item-2" role="article" aria-label="Gas Giants information">
+                    <h3>🪐</h3>
+                    <h3>Gas Giants</h3>
+                    <p>Massive planets composed primarily of hydrogen and helium, like Jupiter and Saturn, dominating the outer solar system.</p>
+                </div>
+                <div class="item item-3" role="article" aria-label="Eclipse information">
+                    <h3>🌑</h3>
+                    <h3>Eclipse</h3>
+                    <p>When celestial bodies align to block light.</p>
+                </div>
+                <div class="item item-4" role="article" aria-label="Asteroids information">
+                    <h3>💫</h3>
+                    <h3>Asteroids</h3>
+                    <p>Rocky remnants from solar system formation.</p>
+                </div>
+                <div class="item item-5" role="article" aria-label="Exoplanets information">
+                    <h3>🌏</h3>
+                    <h3>Exoplanets</h3>
+                    <p>Worlds orbiting distant stars beyond our solar system.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Box -->
+        <div class="info-box" role="complementary" aria-label="Responsive design information">
+            <h3>📱 Resize Your Browser Window</h3>
+            <p>Watch how the layout adapts for Desktop (>768px), Tablet (≤768px), and Mobile (≤480px)!</p>
+            <p><strong>Note Row 5:</strong> Uses the <code>order</code> property to rearrange items on smaller screens - the middle item moves to the top!</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>🌌 Space Explorer</h4>
+                <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
+                    Explore the wonders of the cosmos through interactive, responsive web design. A comprehensive flexbox layout demonstration.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#planets">Planets</a></li>
+                    <li><a href="#exploration">Exploration</a></li>
+                    <li><a href="#galaxy">Galaxy</a></li>
+                    <li><a href="#phenomena">Phenomena</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout" target="_blank" rel="noopener noreferrer">MDN Flexbox Guide</a></li>
+                    <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS-Tricks Guide</a></li>
+                    <li><a href="https://github.com/haroldflint63/project-2-felt" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#" aria-label="About this project">About Project</a></li>
+                    <li><a href="#" aria-label="Contact information">Contact</a></li>
+                    <li><a href="#" aria-label="License information">License</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Space Explorer - Responsive Flexbox Layout Project. Created for educational purposes.</p>
+        </div>
+    </footer>
+</body>
+</html>
