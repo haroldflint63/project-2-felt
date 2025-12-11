@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the cosmos with our responsive flexbox layout showcasing space exploration, planets, galaxies, and celestial wonders. A comprehensive web development project demonstrating advanced CSS techniques.">
+    <meta name="description" content="Explore the world of artificial intelligence with our responsive flexbox layout showcasing AI chips, neural networks, and cutting-edge computing technology. A comprehensive web development project demonstrating advanced CSS techniques.">
     
     <!-- Open Graph tags for social media -->
-    <meta property="og:title" content="Space Exploration - Responsive Flexbox Layout">
-    <meta property="og:description" content="Journey through the cosmos with an interactive, responsive web layout featuring planets, galaxies, and space phenomena.">
+    <meta property="og:title" content="AI Chips - Responsive Flexbox Layout">
+    <meta property="og:description" content="Journey through the world of AI computing with an interactive, responsive web layout featuring processors, neural networks, and chip technology.">
     <meta property="og:type" content="website">
     
-    <title>Space Exploration - Responsive Flexbox Layout</title>
+    <title>AI Chips - Responsive Flexbox Layout</title>
     
     <!-- Google Fonts - Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Emoji Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
     
     <style>
         * {
@@ -33,7 +33,7 @@
 
         body {
             font-family: 'Poppins', 'Arial', sans-serif;
-            background-color: #0a0e27;
+            background-color: #0a0a0a;
             color: #ffffff;
             padding-top: 80px; /* Space for fixed header */
         }
@@ -44,7 +44,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(10, 14, 39, 0.95);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 2rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -57,7 +57,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #64b5f6;
+            color: #00d9ff;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -81,12 +81,12 @@
         }
 
         nav a:hover {
-            color: #64b5f6;
-            background: rgba(100, 181, 246, 0.1);
+            color: #00d9ff;
+            background: rgba(0, 217, 255, 0.1);
         }
 
         nav a:focus {
-            outline: 2px solid #64b5f6;
+            outline: 2px solid #00d9ff;
             outline-offset: 2px;
         }
 
@@ -110,7 +110,7 @@
         h1 {
             text-align: center;
             margin-bottom: 40px;
-            color: #64b5f6;
+            color: #00d9ff;
             font-size: 2.5rem;
             font-weight: 600;
             animation: fadeIn 1s ease-in;
@@ -118,13 +118,13 @@
 
         /* Section Labels */
         .section-label {
-            background: rgba(100, 181, 246, 0.15);
+            background: rgba(0, 217, 255, 0.15);
             padding: 0.5rem 1rem;
             margin-bottom: 1rem;
             border-radius: 8px;
-            border-left: 4px solid #64b5f6;
+            border-left: 4px solid #00d9ff;
             font-weight: 600;
-            color: #64b5f6;
+            color: #00d9ff;
             font-size: 0.9rem;
             letter-spacing: 0.5px;
         }
@@ -139,7 +139,7 @@
 
         /* Base item styling */
         .item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             padding: 30px;
             border-radius: 10px;
             display: flex;
@@ -152,6 +152,7 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
                         box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             animation: fadeIn 0.6s ease-in backwards;
+            border: 1px solid rgba(0, 217, 255, 0.2);
         }
 
         /* Staggered animation for items */
@@ -167,7 +168,7 @@
         }
 
         .item:focus-within {
-            outline: 3px solid #64b5f6;
+            outline: 3px solid #00d9ff;
             outline-offset: 3px;
         }
 
@@ -207,40 +208,40 @@
         .row-3 .item-1 {
             flex: 1 1 calc(25% - 20px);
             min-width: 200px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
         }
 
         .row-3 .item-2 {
             flex: 3 1 calc(75% - 20px);
             min-width: 300px;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background: linear-gradient(135deg, #00d9ff 0%, #0088cc 100%);
         }
 
         /* Row 4: Single full-width item (100%) */
         .row-4 .item {
             flex: 1 1 100%;
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f4c75 100%);
         }
 
         /* Row 5: 1-2-1 layout (25% + 50% + 25%) with ORDER property */
         .row-5 .item-1 {
             flex: 1 1 calc(25% - 20px);
             min-width: 200px;
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            background: linear-gradient(135deg, #533483 0%, #7c3aed 100%);
             order: 1;
         }
 
         .row-5 .item-2 {
             flex: 2 1 calc(50% - 20px);
             min-width: 250px;
-            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            background: linear-gradient(135deg, #00d9ff 0%, #0066cc 100%);
             order: 2;
         }
 
         .row-5 .item-3 {
             flex: 1 1 calc(25% - 20px);
             min-width: 200px;
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
             order: 3;
         }
 
@@ -251,24 +252,24 @@
         }
 
         .row-6 .item-1 {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .row-6 .item-2 {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             flex: 2 1 calc(40% - 20px);
         }
 
         .row-6 .item-3 {
-            background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%);
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
         .row-6 .item-4 {
-            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
         }
 
         .row-6 .item-5 {
-            background: linear-gradient(135deg, #f77062 0%, #fe5196 100%);
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
         }
 
         /* Info Box */
@@ -283,7 +284,7 @@
 
         .info-box h3 {
             margin-bottom: 15px;
-            color: #64b5f6;
+            color: #00d9ff;
         }
 
         .info-box p {
@@ -300,10 +301,10 @@
 
         /* Footer Styles */
         footer {
-            background: rgba(10, 14, 39, 0.95);
+            background: rgba(10, 10, 10, 0.95);
             padding: 3rem 2rem 1.5rem;
             margin-top: 60px;
-            border-top: 1px solid rgba(100, 181, 246, 0.2);
+            border-top: 1px solid rgba(0, 217, 255, 0.2);
         }
 
         .footer-content {
@@ -322,7 +323,7 @@
         }
 
         .footer-section h4 {
-            color: #64b5f6;
+            color: #00d9ff;
             margin-bottom: 1rem;
             font-size: 1.1rem;
             font-weight: 600;
@@ -341,12 +342,12 @@
         }
 
         .footer-section a:hover {
-            color: #64b5f6;
+            color: #00d9ff;
             padding-left: 5px;
         }
 
         .footer-section a:focus {
-            outline: 2px solid #64b5f6;
+            outline: 2px solid #00d9ff;
             outline-offset: 2px;
         }
 
@@ -481,81 +482,81 @@
 <body>
     <!-- Header -->
     <header role="banner">
-        <a href="#" class="logo" aria-label="Space Exploration Home">
-            <span>🚀</span>
-            <span>Space Explorer</span>
+        <a href="#" class="logo" aria-label="AI Chips Home">
+            <span>🖥️</span>
+            <span>AI Chips</span>
         </a>
         <nav role="navigation" aria-label="Main navigation">
             <ul>
-                <li><a href="#planets">Planets</a></li>
-                <li><a href="#exploration">Exploration</a></li>
-                <li><a href="#galaxy">Galaxy</a></li>
-                <li><a href="#phenomena">Phenomena</a></li>
+                <li><a href="#processors">Processors</a></li>
+                <li><a href="#computing">Computing</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#development">Development</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
     <main role="main">
-        <h1>🌌 Responsive Flexbox Layout - Space Exploration Theme 🚀</h1>
+        <h1>🖥️ Responsive Flexbox Layout - AI Chips & Computing Theme 💻</h1>
 
         <!-- Row 1: 4 equal columns (25% each) -->
-        <section id="planets" aria-labelledby="row1-label">
+        <section id="processors" aria-labelledby="row1-label">
             <div class="section-label" id="row1-label">Row 1: Four Equal Columns (25% each)</div>
             <div class="row row-1">
-                <div class="item" role="article" aria-label="Earth information">
-                    <h3>🌍</h3>
-                    <h3>Earth</h3>
-                    <p>Our home planet, the only known world with life in the universe.</p>
+                <div class="item" role="article" aria-label="CPU information">
+                    <h3>🧠</h3>
+                    <h3>CPU</h3>
+                    <p>Central Processing Unit - the brain of computers, handling general-purpose tasks and instructions.</p>
                 </div>
-                <div class="item" role="article" aria-label="Mars information">
-                    <h3>🔴</h3>
-                    <h3>Mars</h3>
-                    <p>The Red Planet, future destination for human exploration.</p>
+                <div class="item" role="article" aria-label="GPU information">
+                    <h3>🎮</h3>
+                    <h3>GPU</h3>
+                    <p>Graphics Processing Unit - specialized for parallel processing and AI model training.</p>
                 </div>
-                <div class="item" role="article" aria-label="Saturn information">
-                    <h3>🪐</h3>
-                    <h3>Saturn</h3>
-                    <p>The ringed giant with 83 known moons orbiting around it.</p>
+                <div class="item" role="article" aria-label="TPU information">
+                    <h3>⚡</h3>
+                    <h3>TPU</h3>
+                    <p>Tensor Processing Unit - Google's custom chip designed specifically for machine learning workloads.</p>
                 </div>
-                <div class="item" role="article" aria-label="Moon information">
-                    <h3>🌙</h3>
-                    <h3>Moon</h3>
-                    <p>Earth's natural satellite and humanity's first step beyond home.</p>
+                <div class="item" role="article" aria-label="NPU information">
+                    <h3>🤖</h3>
+                    <h3>NPU</h3>
+                    <p>Neural Processing Unit - optimized for neural network operations and edge AI applications.</p>
                 </div>
             </div>
         </section>
 
         <!-- Row 2: 2 equal columns (50% each) -->
-        <section id="exploration" aria-labelledby="row2-label">
+        <section id="computing" aria-labelledby="row2-label">
             <div class="section-label" id="row2-label">Row 2: Two Equal Columns (50% each)</div>
             <div class="row row-2">
-                <div class="item" role="article" aria-label="Space Exploration information">
-                    <h3>🛸</h3>
-                    <h3>Space Exploration</h3>
-                    <p>Humanity's journey to explore the cosmos, from satellites to interstellar missions. We continue to push the boundaries of what's possible.</p>
+                <div class="item" role="article" aria-label="Machine Learning information">
+                    <h3>🧮</h3>
+                    <h3>Machine Learning</h3>
+                    <p>Training algorithms to learn from data, enabling computers to improve performance without explicit programming. Powers everything from recommendations to autonomous vehicles.</p>
                 </div>
-                <div class="item" role="article" aria-label="Astronomy information">
-                    <h3>🔭</h3>
-                    <h3>Astronomy</h3>
-                    <p>The scientific study of celestial objects, space, and the universe. Unlocking the mysteries of galaxies, stars, and planets.</p>
+                <div class="item" role="article" aria-label="Deep Learning information">
+                    <h3>🔮</h3>
+                    <h3>Deep Learning</h3>
+                    <p>Advanced neural networks with multiple layers that can process complex patterns. The technology behind image recognition, natural language processing, and AI breakthroughs.</p>
                 </div>
             </div>
         </section>
 
         <!-- Row 3: 1 narrow column (25%) + 1 wide column (75%) -->
-        <section id="galaxy" aria-labelledby="row3-label">
+        <section id="architecture" aria-labelledby="row3-label">
             <div class="section-label" id="row3-label">Row 3: Asymmetric Layout (25% + 75%)</div>
             <div class="row row-3">
-                <div class="item item-1" role="article" aria-label="Sun information">
-                    <h3>☀️</h3>
-                    <h3>The Sun</h3>
-                    <p>Our star, the center of our solar system.</p>
+                <div class="item item-1" role="article" aria-label="Transistor information">
+                    <h3>⚙️</h3>
+                    <h3>Transistor</h3>
+                    <p>The fundamental building block of all modern chips.</p>
                 </div>
-                <div class="item item-2" role="article" aria-label="Milky Way Galaxy information">
-                    <h3>🌌</h3>
-                    <h3>Milky Way Galaxy</h3>
-                    <p>Our home galaxy contains over 200 billion stars and spans 100,000 light-years across. It's a barred spiral galaxy with our solar system located in one of its outer arms, about 26,000 light-years from the galactic center.</p>
+                <div class="item item-2" role="article" aria-label="Neural Network Architecture information">
+                    <h3>🕸️</h3>
+                    <h3>Neural Network Architecture</h3>
+                    <p>Modern AI chips contain billions of transistors organized into specialized cores for matrix operations. These architectures process massive parallel computations, with memory hierarchies optimized for neural network workloads. Advanced designs include tensor cores, systolic arrays, and dedicated AI accelerators.</p>
                 </div>
             </div>
         </section>
@@ -564,63 +565,63 @@
         <section aria-labelledby="row4-label">
             <div class="section-label" id="row4-label">Row 4: Full-Width Single Item (100%)</div>
             <div class="row row-4">
-                <div class="item" role="article" aria-label="International Space Station information">
-                    <h3>🚀 International Space Station 🛰️</h3>
-                    <p>A marvel of human engineering, the ISS orbits Earth at 17,500 mph, serving as a laboratory for scientific research and international cooperation. It has been continuously inhabited since November 2000, representing one of humanity's greatest achievements in space exploration.</p>
+                <div class="item" role="article" aria-label="Large Language Models information">
+                    <h3>🌐 Large Language Models (LLMs) 📚</h3>
+                    <p>Trained on vast datasets with billions of parameters, LLMs like GPT, Claude, and Gemini require enormous computational power. AI chips with high memory bandwidth and specialized matrix multiplication units process trillions of operations per second. Training a single model can consume megawatts of power across thousands of specialized AI accelerators, representing the cutting edge of human computational achievement.</p>
                 </div>
             </div>
         </section>
 
         <!-- Row 5: 1-2-1 layout (25% + 50% + 25%) with ORDER property that changes on tablet/mobile -->
-        <section id="phenomena" aria-labelledby="row5-label">
+        <section id="development" aria-labelledby="row5-label">
             <div class="section-label" id="row5-label">Row 5: Three-Column Layout (25% + 50% + 25%) - Uses ORDER Property</div>
             <div class="row row-5">
-                <div class="item item-1" role="article" aria-label="Nebulae information">
-                    <h3>🌠</h3>
-                    <h3>Nebulae</h3>
-                    <p>Stellar nurseries where new stars are born from cosmic dust and gas.</p>
+                <div class="item item-1" role="article" aria-label="Data Collection information">
+                    <h3>📊</h3>
+                    <h3>Data Collection</h3>
+                    <p>Gathering massive datasets from diverse sources to train AI models effectively.</p>
                 </div>
-                <div class="item item-2" role="article" aria-label="Star Formation information">
-                    <h3>🌟</h3>
-                    <h3>Star Formation</h3>
-                    <p>Stars form from clouds of gas and dust that collapse under gravity. This process takes millions of years and creates the light sources that illuminate our universe.</p>
+                <div class="item item-2" role="article" aria-label="Model Training information">
+                    <h3>⚡</h3>
+                    <h3>Model Training</h3>
+                    <p>The intensive process of teaching neural networks using specialized AI chips. Requires days to months of computation, optimizing billions of parameters through backpropagation and gradient descent.</p>
                 </div>
-                <div class="item item-3" role="article" aria-label="Black Holes information">
-                    <h3>🕳️</h3>
-                    <h3>Black Holes</h3>
-                    <p>Mysterious objects with gravity so strong that nothing can escape them.</p>
+                <div class="item item-3" role="article" aria-label="Deployment information">
+                    <h3>🚀</h3>
+                    <h3>Deployment</h3>
+                    <p>Putting trained models into production environments for real-world applications.</p>
                 </div>
             </div>
         </section>
 
         <!-- Row 6: Creative layout - 5 items with varying widths -->
         <section aria-labelledby="row6-label">
-            <div class="section-label" id="row6-label">Row 6: Creative Five-Item Layout (Varying Widths)</div>
+            <div class="section-label" id="row6-label">Row 6: Creative Five-Item Layout (Varying Widths) - AI Chip Manufacturers</div>
             <div class="row row-6">
-                <div class="item item-1" role="article" aria-label="Comets information">
-                    <h3>☄️</h3>
-                    <h3>Comets</h3>
-                    <p>Icy wanderers from the outer solar system.</p>
+                <div class="item item-1" role="article" aria-label="NVIDIA information">
+                    <h3>🟢</h3>
+                    <h3>NVIDIA</h3>
+                    <p>Leader in GPU computing with CUDA platform and H100 chips.</p>
                 </div>
-                <div class="item item-2" role="article" aria-label="Gas Giants information">
-                    <h3>🪐</h3>
-                    <h3>Gas Giants</h3>
-                    <p>Massive planets composed primarily of hydrogen and helium, like Jupiter and Saturn, dominating the outer solar system.</p>
+                <div class="item item-2" role="article" aria-label="Google TPU information">
+                    <h3>🔵</h3>
+                    <h3>Google TPU</h3>
+                    <p>Custom-designed Tensor Processing Units powering Google's AI infrastructure. TPU v5 delivers breakthrough performance for large-scale machine learning workloads with innovative pod architectures.</p>
                 </div>
-                <div class="item item-3" role="article" aria-label="Eclipse information">
-                    <h3>🌑</h3>
-                    <h3>Eclipse</h3>
-                    <p>When celestial bodies align to block light.</p>
+                <div class="item item-3" role="article" aria-label="AMD information">
+                    <h3>🔴</h3>
+                    <h3>AMD</h3>
+                    <p>MI300 series accelerators competing in AI computing market.</p>
                 </div>
-                <div class="item item-4" role="article" aria-label="Asteroids information">
-                    <h3>💫</h3>
-                    <h3>Asteroids</h3>
-                    <p>Rocky remnants from solar system formation.</p>
+                <div class="item item-4" role="article" aria-label="Intel information">
+                    <h3>🔷</h3>
+                    <h3>Intel</h3>
+                    <p>Gaudi accelerators and next-gen AI processors for data centers.</p>
                 </div>
-                <div class="item item-5" role="article" aria-label="Exoplanets information">
-                    <h3>🌏</h3>
-                    <h3>Exoplanets</h3>
-                    <p>Worlds orbiting distant stars beyond our solar system.</p>
+                <div class="item item-5" role="article" aria-label="Apple information">
+                    <h3>⚪</h3>
+                    <h3>Apple Silicon</h3>
+                    <p>M-series chips with unified memory and Neural Engine.</p>
                 </div>
             </div>
         </section>
@@ -629,7 +630,7 @@
         <div class="info-box" role="complementary" aria-label="Responsive design information">
             <h3>📱 Resize Your Browser Window</h3>
             <p>Watch how the layout adapts for Desktop (>768px), Tablet (≤768px), and Mobile (≤480px)!</p>
-            <p><strong>Note Row 5:</strong> Uses the <code>order</code> property to rearrange items on smaller screens - the middle item moves to the top!</p>
+            <p><strong>Note Row 5:</strong> Uses the <code>order</code> property to rearrange items on smaller screens - the training process moves to the top!</p>
         </div>
     </main>
 
@@ -637,18 +638,18 @@
     <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
-                <h4>🌌 Space Explorer</h4>
+                <h4>🖥️ AI Chips</h4>
                 <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
-                    Explore the wonders of the cosmos through interactive, responsive web design. A comprehensive flexbox layout demonstration.
+                    Explore the world of artificial intelligence computing through interactive, responsive web design. A comprehensive flexbox layout demonstration.
                 </p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#planets">Planets</a></li>
-                    <li><a href="#exploration">Exploration</a></li>
-                    <li><a href="#galaxy">Galaxy</a></li>
-                    <li><a href="#phenomena">Phenomena</a></li>
+                    <li><a href="#processors">Processors</a></li>
+                    <li><a href="#computing">Computing</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#development">Development</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -669,7 +670,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Space Explorer - Responsive Flexbox Layout Project. Created for educational purposes.</p>
+            <p>&copy; 2025 AI Chips - Responsive Flexbox Layout Project. Created for educational purposes.</p>
         </div>
     </footer>
 </body>
